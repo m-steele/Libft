@@ -1,13 +1,13 @@
 
 
-// Allows user to replace a number of bytes, relagated to ascii
+// Allows user to replace a number of bytes, relegated to ascii
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
 	while (n--)
 		((unsigned char *)s)[n] = (unsigned char)c;
-	return(s);
+	return (s);
 }
 // #include <stdio.h>
 // int main()
@@ -20,5 +20,5 @@ void	*ft_memset(void *s, int c, size_t n)
 // 	unsigned char j [] ="jello?";*/
 // 	ft_memset(h, 'j', 1);
 // 	printf("%s\n", h);
-// 	return(0);
+// 	return (0);
 // }

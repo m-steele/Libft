@@ -1,8 +1,7 @@
 
 
 // replaces specified number of bytes with zero '\0'
-// #include "libft.h"
-#include <string.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
