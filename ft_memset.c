@@ -1,8 +1,7 @@
 
 
 // Allows user to replace a number of bytes, relagated to ascii
-// #include "libft.h"
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
