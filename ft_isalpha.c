@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 10:50:23 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/17 12:18:16 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/09/19 13:27:10 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 int	ft_isalpha(int c)
 {
 	if ((c > 64 && c < 91) || (c > 96 && c < 123))
-		return(1);
-	return(c);
+		return (1);
+	return (0);
 }
