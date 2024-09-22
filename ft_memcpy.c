@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:29:52 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/19 13:31:04 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/09/22 08:54:59 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Copy memory from src to dest. There are not overlaps.
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned char	*tmp_dest;
+	unsigned char	*tmp_dst;
 	unsigned char	*tmp_src;
 
-	if (dest == NULL && src == NULL)
+	if (dst == NULL && src == NULL)
 		return (NULL);
-	tmp_dest = (unsigned char *) dest;
+	tmp_dst = (unsigned char *) dst;
 	tmp_src = (unsigned char *) src;
 	while (n--)
-		*tmp_dest++ = *tmp_src++;
-	return (dest);
+		*tmp_dst++ = *tmp_src++;
+	return (dst);
 }
