@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:49:28 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/22 13:35:02 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/09/23 15:57:06 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ int ft_tolower(int c);
 char *ft_strchr(const char *s, int c);
 char *ft_strrchr(const char *s, int c);
 int ft_strncmp(const char *s1, const char *s2, size_t n);
+void *ft_memchr(const void *s, int c, size_t n);
+int ft_memcmp(const void *s1, const void *s2, size_t n);
+int ft_atoi(const char *nptr);
 
 #endif // LIBFT_H

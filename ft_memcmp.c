@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 10:22:38 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/23 12:10:20 by ekosnick         ###   ########.fr       */
+/*   Created: 2024/09/23 13:05:54 by ekosnick          #+#    #+#             */
+/*   Updated: 2024/09/23 13:28:44 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// similar to strchr(): return first occuance of char but this words
-// for all datatypes and for specific num of bytes defined by user
+// compares user specifed n bytes
 #include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
-	unsigned char *str;
-	unsigned char cc;
-
+	size_t	i;
+	unsigned char	*ss1;
+	unsigned char	*ss2;
+	
 	i = 0;
-	str = (unsigned char *)s;
-	cc = (unsigned char)c;
+	ss1 = (unsigned char*)s1;
+	ss2 = (unsigned char*)s2;
 	while (i < n)
 	{
-		if 	(str[i] == cc)
-			return ((void *) &str[i]);
+		if (ss1[i] != ss2[i])
+			return (ss1[i] - ss2[i]);
 		i++;
 	}
-	return(NULL);
+	return (0);
 }

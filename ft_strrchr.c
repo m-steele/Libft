@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/23 10:25:56 by ekosnick          #+#    #+#             */
+/*   Updated: 2024/09/23 10:26:34 by ekosnick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// return string from LAST occur of defined char or null
 #include "libft.h"
 
 char *ft_strrchr(const char *s, int c)
