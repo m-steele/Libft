@@ -3,45 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:34:48 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/23 14:29:27 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/09/24 13:15:49 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+// looking for litte string in big string; need two indexes
+// NULL if no little; cpy big starting where it starts from little
+// within a given range of bytes def by user
 #include "libft.h"
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
+	size_t	j;
 	
-	
-	while (i > len)
+	i = 0;
+	j = 0;
+	if (!*little)
+		return ((char *)big);
+	while (big[i])
 	{
-		if (little == "")
-			return (*big);
-		if (little[i] != big[i])
-			i++;
-		return (*little);
+		while (big[i + j] == little[j] && i + j < len)
+			if (!little[++j])
+				return ((char *)big +i);
+		i++;
 	}
 	return(NULL);
-}
-
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-	printf("\033[1;31mft_strnchr()\033[0m\n");
-	const char big[] = "abcdefgabcdefgabcdefg";
-	const char little[] = "abcdefgabcdefg";
-	const char nothing[] = "";
-	printf("Your 'a': %d\n", ft_strnstr(*big, *little, 5));
-	printf("Devl 'a': %d\n", strnstr(*big, *little, 5));
-	printf("Your 'g': %d\n", ft_strnstr(*big, *little, 20));
-	printf("Devl 'g': %d\n", strnstr(*big, *little, 20));
-	printf("Your 'null term': %d\n", ft_strnstr(*big, nothing, 5));
-	printf("Devl 'null term': %d\n\n", strnstr(*big, nothing, 5));
-return (0);
 }

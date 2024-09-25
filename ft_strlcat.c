@@ -2,6 +2,8 @@
 #include "libft.h"
 
 // appends scr to end of dest ensuring '\0' return length of new string
+// but will be truncated if dstsize is too small, it will be the source
+// plus the turncated dstsize
 
 // size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 // {
@@ -36,18 +38,5 @@ size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
 		++i;
 	}
 	ret = ft_strlcpy(dst, src, dstsize -1);
-	return (ret +i);
-}
-
-
-#include <stdio.h>
-int main()
-{
-	char dst_string[] = "You are --> ";
-	const char *src_string = "prese";
-
-	size_t ref = ft_strlcat(dst_string, src_string, 17);
-	printf("Destination: %s\n", dst_string);
-	printf("My func length: %zu\n", ref);
-return(0);
+	return (ret + i);
 }

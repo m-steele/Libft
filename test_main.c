@@ -20,6 +20,54 @@ void print_result(const char *test_name, const char *expected, const char *resul
     }
 }
 
+// This is supposed to be the developers function which I cannot run from WSL
+char *strnstr(const char *s, const char *find, size_t slen)
+{
+	char c, sc;
+	size_t len;
+
+	if ((c = *find++) != '\0') {
+		len = strlen(find);
+		do {
+			do {
+				if (slen-- < 1 || (sc = *s++) == '\0')
+					return (NULL);
+			} while (sc != c);
+			if (len > slen)
+				return (NULL);
+		} while (strncmp(s, find, len) != 0);
+		s--;
+	}
+	return ((char *)s);
+}
+
+// Supposed to be developers function strlcat() which I cannot run from WSL
+size_t strlcat(char *dst, const char *src, size_t siz)
+{
+        char *d = dst;
+        const char *s = src;
+        size_t n = siz;
+        size_t dlen;
+        /* Find the end of dst and adjust bytes left but don't go past end */
+        while (n-- != 0 && *d != '\0')
+                d++;
+        dlen = d - dst;
+        n = siz - dlen;
+        if (n == 0)
+                return(dlen + strlen(s));
+        while (*s != '\0') {
+                if (n != 1) {
+                        *d++ = *s;
+                        n--;
+                }
+                s++;
+        }
+        *d = '\0';
+
+        return(dlen + (s - src));        /* count does not include NUL */
+}
+
+
 int main(void)
 {
 	char str = '1';
@@ -132,14 +180,14 @@ int main(void)
 	int lower = 'a';
 	printf("Your upper: %d\n", ft_toupper(upper));
 	printf("Your lower: %d\n", ft_toupper(lower));
-	printf("Their upper: %d\n", toupper(upper));
-	printf("Their lower: %d\n\n", toupper(lower));
+	printf("Delv upper: %d\n", toupper(upper));
+	printf("Delv lower: %d\n\n", toupper(lower));
 
 	printf("\033[1;31mft_tolower()\033[0m\n");
 	printf("Your upper: %d\n", ft_tolower(upper));
 	printf("Your lower: %d\n", ft_tolower(lower));
-	printf("Their upper: %d\n", tolower(upper));
-	printf("Their lower: %d\n\n", tolower(lower));
+	printf("Delv upper: %d\n", tolower(upper));
+	printf("Delv lower: %d\n\n", tolower(lower));
 
 	printf("\033[1;31mft_strchr()\033[0m\n");
 	const char string[] = "abcdefgabcdefgabcdefg";
@@ -186,8 +234,33 @@ int main(void)
 	printf("\033[1;36mYour same:\033[0m %d\n", ft_memcmp(str1, str2, 2));
 	printf("\033[1;36mDelv same:\033[0m %d\n\n", ft_memcmp(str1, str2, 2));
 
-/*NEED TO COMPLETE STRNSTR*/
+// Still uncertain about the behavior of strlcat()
+	printf("\033[1;31mft_strlcat()\033[0m\n");
+	char dst_string[50] = "Ty jsi --> "; /*11*/
+	const char *src_string = "velkeho prese"; /*13*/
+	printf("Destination: %s\n", dst_string);
+	printf("Source: %s\n", src_string);
+	size_t size = 12;
+	size_t ref = ft_strlcat(dst_string, src_string, size);
+	printf("Your Append: %s\n", dst_string);
+	printf("Your length: %zu\n", ref);
+	size_t nref = strlcat(dst_string, src_string, size);
+	printf("Devl Append: %s\n", dst_string);
+	printf("Devl length: %zu\n\n", nref);
 
+
+	printf("\033[1;31mft_strnchr()\033[0m\n");
+	const char big[] = "abcdefgabc";
+	const char little[] = "ga";
+	const char nothing[] = "";
+	printf("Big: %s\n", big);
+	printf("little: %s\n", little);
+	printf("Your 5: %s\n", ft_strnstr(big, little, 5));
+	printf("Devl 5: %s\n", strnstr(big, little, 5));
+	printf("Your 8: %s\n", ft_strnstr(big, little, 8));
+	printf("Devl 8: %s\n", strnstr(big, little, 8));
+	printf("Your 'null term': %s\n", ft_strnstr(big, nothing, 5));
+	printf("Devl 'null term': %s\n\n", strnstr(big, nothing, 5));
 
 	printf("\033[1;31mft_atio()\033[0m\n");
 	char asciistr[] = "    -153sdfhs";
