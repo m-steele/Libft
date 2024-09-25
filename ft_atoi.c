@@ -6,12 +6,12 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 14:32:42 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/23 15:53:38 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/09/25 09:46:31 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 // this is the atoi as it is in the man not piscine
+#include "libft.h"
 
 int ft_atoi(const char *nptr)
 {

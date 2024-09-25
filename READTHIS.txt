@@ -1,0 +1,7 @@
+READTHIS
+
+to install the man for strlcat:
+https://unix.stackexchange.com/questions/230948/implicit-declaration-of-strlcpy-and-strlcat-even-with-string-h-included?newreg=d902f067718b454ebcba6489d1707633
+
+sudo apt-get install libbsd-dev
+#include <bsd/string.h>

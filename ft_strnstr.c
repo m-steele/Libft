@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:34:48 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/24 13:15:49 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/09/25 09:54:45 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 // within a given range of bytes def by user
 #include "libft.h"
 
-char *ft_strnstr(const char *big, const char *little, size_t len)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	j = 0;
 	if (!*little)
@@ -28,8 +28,8 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 	{
 		while (big[i + j] == little[j] && i + j < len)
 			if (!little[++j])
-				return ((char *)big +i);
+				return ((char *)big + i);
 		i++;
 	}
-	return(NULL);
+	return (NULL);
 }

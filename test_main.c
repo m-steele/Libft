@@ -2,8 +2,10 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <bsd/string.h>
 
-// To compile use: gcc -o my_test test_main.c libft.a
+// To compile use: gcc test_main.c libft.a -lbsd
+// NOTE: -lbsd must be used to run strlcat
 
 // This is a separate function used for testing ft_memmove
 void print_result(const char *test_name, const char *expected, const char *result)
@@ -21,7 +23,7 @@ void print_result(const char *test_name, const char *expected, const char *resul
 }
 
 // This is supposed to be the developers function which I cannot run from WSL
-char *strnstr(const char *s, const char *find, size_t slen)
+char *d_strnstr(const char *s, const char *find, size_t slen)
 {
 	char c, sc;
 	size_t len;
@@ -42,7 +44,7 @@ char *strnstr(const char *s, const char *find, size_t slen)
 }
 
 // Supposed to be developers function strlcat() which I cannot run from WSL
-size_t strlcat(char *dst, const char *src, size_t siz)
+size_t d_strlcat(char *dst, const char *src, size_t siz)
 {
         char *d = dst;
         const char *s = src;
@@ -234,20 +236,27 @@ int main(void)
 	printf("\033[1;36mYour same:\033[0m %d\n", ft_memcmp(str1, str2, 2));
 	printf("\033[1;36mDelv same:\033[0m %d\n\n", ft_memcmp(str1, str2, 2));
 
-// Still uncertain about the behavior of strlcat()
+// Takes min of dst || size; return that val plus source
+// The string appended will depend on the size. It should
+// append source to wherever size stops, but somehow diff
+// lengths of source may occur ???
 	printf("\033[1;31mft_strlcat()\033[0m\n");
-	char dst_string[50] = "Ty jsi --> "; /*11*/
+	char dst_string[11] = "Ty jsi -->"; /*11*/
 	const char *src_string = "velkeho prese"; /*13*/
 	printf("Destination: %s\n", dst_string);
 	printf("Source: %s\n", src_string);
-	size_t size = 12;
+	size_t size = 9;
 	size_t ref = ft_strlcat(dst_string, src_string, size);
 	printf("Your Append: %s\n", dst_string);
-	printf("Your length: %zu\n", ref);
-	size_t nref = strlcat(dst_string, src_string, size);
+	printf("Your length: %zu\n\n", ref);
+	// strcpy(dst_string, "Ty jsi -->");
+	size_t nref = d_strlcat(dst_string, src_string, size);
+	printf("Adap Append: %s\n", dst_string);
+	printf("Adap length: %zu\n\n", nref);
+	// strcpy(dst_string, "Ty jsi -->");
+	size_t dref = strlcat(dst_string, src_string, size);
 	printf("Devl Append: %s\n", dst_string);
-	printf("Devl length: %zu\n\n", nref);
-
+	printf("Devl length: %zu\n\n", dref);
 
 	printf("\033[1;31mft_strnchr()\033[0m\n");
 	const char big[] = "abcdefgabc";
@@ -256,15 +265,72 @@ int main(void)
 	printf("Big: %s\n", big);
 	printf("little: %s\n", little);
 	printf("Your 5: %s\n", ft_strnstr(big, little, 5));
-	printf("Devl 5: %s\n", strnstr(big, little, 5));
+	printf("Devl 5: %s\n", d_strnstr(big, little, 5));
 	printf("Your 8: %s\n", ft_strnstr(big, little, 8));
-	printf("Devl 8: %s\n", strnstr(big, little, 8));
+	printf("Devl 8: %s\n", d_strnstr(big, little, 8));
 	printf("Your 'null term': %s\n", ft_strnstr(big, nothing, 5));
-	printf("Devl 'null term': %s\n\n", strnstr(big, nothing, 5));
+	printf("Devl 'null term': %s\n\n", d_strnstr(big, nothing, 5));
 
 	printf("\033[1;31mft_atio()\033[0m\n");
 	char asciistr[] = "    -153sdfhs";
 	printf("Your return: %d\n", ft_atoi(asciistr));
-	printf("Devl return: %d\n", atoi(asciistr));
-    return (0);
+	printf("Devl return: %d\n\n", atoi(asciistr));
+ 
+	printf("\033[1;31mft_calloc()\033[0m\n");
+    size_t nmemb = 999; /*use negative to break*/
+    size_t sz = sizeof(int); /*sizeof(int)*/
+    int *arr;
+	int *ar;
+    // Use ft_calloc to allocate memory for an array of 10 integers
+    arr = (int *)ft_calloc(nmemb, sz);
+    // Check if memory allocation failed
+    if (!arr)
+    {
+        printf("Your memory allocation failed!\n");
+	}	
+	ar = (int *)calloc(nmemb, sz);
+	if (!ar)
+	{
+		printf("Delv memory allocation failed!\n\n");
+	}
+    // Check if the allocated memory is properly zeroed
+    int all_zero = 1;
+	int all_zero_s = all_zero;
+	size_t i = 0;
+	while  (i < nmemb)
+    {
+        if (arr[i] != 0)
+        {
+            all_zero = 0;
+            break;
+        }
+		i++;
+    }
+	if (all_zero)
+        printf("Yours passed: memory is properly zeroed.\n");
+    else
+        printf("Your test is'a no good!\n");
+	free(arr);
+    // Free the allocated memory
+	size_t	ii = 0;
+	while (ii < nmemb)
+	{
+		if (ar[ii] !=0)
+		{
+			all_zero_s = 0;
+			break;
+		}
+		ii++;
+	}
+	if (all_zero_s)
+		printf("Devls passed: memory is properly zeroed.\n\n");
+	else 
+		printf("Devl test is'a no good!\n\n");
+	free(ar);
+
+	printf("\033[1;31mft_strdup()\033[0m\n");
+	char s[] = "-Hello -World!";
+	printf("Your copy: %s\n", ft_strdup(s));
+	printf("Devl copy: %s\n\n", strdup(s));
+return (0);
 }
