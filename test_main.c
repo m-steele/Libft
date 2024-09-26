@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
-#include <bsd/string.h>
+// #include <bsd/string.h>
 
 // To compile use: gcc test_main.c libft.a -lbsd
 // NOTE: -lbsd must be used to run strlcat
@@ -240,23 +240,23 @@ int main(void)
 // The string appended will depend on the size. It should
 // append source to wherever size stops, but somehow diff
 // lengths of source may occur ???
-	printf("\033[1;31mft_strlcat()\033[0m\n");
-	char dst_string[11] = "Ty jsi -->"; /*11*/
-	const char *src_string = "velkeho prese"; /*13*/
-	printf("Destination: %s\n", dst_string);
-	printf("Source: %s\n", src_string);
-	size_t size = 9;
-	size_t ref = ft_strlcat(dst_string, src_string, size);
-	printf("Your Append: %s\n", dst_string);
-	printf("Your length: %zu\n\n", ref);
-	// strcpy(dst_string, "Ty jsi -->");
-	size_t nref = d_strlcat(dst_string, src_string, size);
-	printf("Adap Append: %s\n", dst_string);
-	printf("Adap length: %zu\n\n", nref);
-	// strcpy(dst_string, "Ty jsi -->");
-	size_t dref = strlcat(dst_string, src_string, size);
-	printf("Devl Append: %s\n", dst_string);
-	printf("Devl length: %zu\n\n", dref);
+	// printf("\033[1;31mft_strlcat()\033[0m\n");
+	// char dst_string[11] = "Ty jsi -->"; /*11*/
+	// const char *src_string = "velkeho prese"; /*13*/
+	// printf("Destination: %s\n", dst_string);
+	// printf("Source: %s\n", src_string);
+	// size_t size = 9;
+	// size_t ref = ft_strlcat(dst_string, src_string, size);
+	// printf("Your Append: %s\n", dst_string);
+	// printf("Your length: %zu\n\n", ref);
+	// // strcpy(dst_string, "Ty jsi -->");
+	// size_t nref = d_strlcat(dst_string, src_string, size);
+	// printf("Adap Append: %s\n", dst_string);
+	// printf("Adap length: %zu\n\n", nref);
+	// // strcpy(dst_string, "Ty jsi -->");
+	// size_t dref = strlcat(dst_string, src_string, size);
+	// printf("Devl Append: %s\n", dst_string);
+	// printf("Devl length: %zu\n\n", dref);
 
 	printf("\033[1;31mft_strnchr()\033[0m\n");
 	const char big[] = "abcdefgabc";
@@ -332,5 +332,13 @@ int main(void)
 	char s[] = "-Hello -World!";
 	printf("Your copy: %s\n", ft_strdup(s));
 	printf("Devl copy: %s\n\n", strdup(s));
+
+	printf("\033[1;33mPART TWO of LIBFT - functions to end all functions\033[0m\n");
+	printf("\033[1;31mft_substr()\033[0m\n");
+	char str_sub1[]="this is your sorcestring"; /*25 characters*/
+	printf("Should return 'estri',\nYours: %s\n", ft_substr(str_sub1, 4, 5));
+	printf("Should return NULL,\nYours: %s\n", ft_substr(str_sub1, 4, 50));
+	printf("Should return 'sorcestrin',\nYours: %s\n", ft_substr(str_sub1, 0, 10));
+
 return (0);
 }
