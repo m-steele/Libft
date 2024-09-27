@@ -4,7 +4,7 @@
 #include <stdlib.h>
 // #include <bsd/string.h>
 
-// To compile use: gcc test_main.c libft.a -lbsd
+// To compile use: 	
 // NOTE: -lbsd must be used to run strlcat
 
 // This is a separate function used for testing ft_memmove
@@ -68,7 +68,6 @@ size_t d_strlcat(char *dst, const char *src, size_t siz)
 
         return(dlen + (s - src));        /* count does not include NUL */
 }
-
 
 int main(void)
 {
@@ -339,6 +338,11 @@ int main(void)
 	printf("Should return 'estri',\nYours: %s\n", ft_substr(str_sub1, 4, 5));
 	printf("Should return NULL,\nYours: %s\n", ft_substr(str_sub1, 4, 50));
 	printf("Should return 'sorcestrin',\nYours: %s\n", ft_substr(str_sub1, 0, 10));
+
+	printf("\033[1;31mft_strtrim()\033[0m\n");
+	char strtotrim[] = "i am a fat pigi a m a"; /*15 chars*/
+	char ctoset[] = "i am ";	 /*4 chars*/
+	printf("Original: %s\nYours is: %s\n\n", strtotrim, ft_strtrim(strtotrim, ctoset));
 
 return (0);
 }
