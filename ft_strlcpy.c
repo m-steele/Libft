@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 09:50:25 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/25 09:50:27 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/09/26 14:58:17 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "libft.h"
 
-size_t ft_strlcpy(char *dest, const char *src, size_t destsize)
+size_t	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
 	size_t	src_len;
 	

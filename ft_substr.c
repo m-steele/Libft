@@ -10,7 +10,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return(NULL);
 	if (start >= ft_strlen(s))
 		return(NULL);
-	sub_s = (char *)malloc(len + 1);/*+1 for null term*/
+	sub_s = (char *)malloc((len + 1) * sizeof(char));
 	if (!sub_s)
 		return (NULL);
 	i = 0;
@@ -21,12 +21,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	sub_s[i]= '\0';
 	return (sub_s);
-}
-
-#include <stdio.h>
-int main()
-{
-	char str[]="sorcestring";
-	printf("%s\n", ft_substr(str, 4, 5));
-return(0);
 }
