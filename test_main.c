@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
-// #include <bsd/string.h>
+#include <bsd/string.h>
 
-// To compile use: 	
+// To compile use: 	gcc test_main.c libft.a -lbsd
 // NOTE: -lbsd must be used to run strlcat
 
 // This is a separate function used for testing ft_memmove
@@ -67,6 +67,17 @@ size_t d_strlcat(char *dst, const char *src, size_t siz)
         *d = '\0';
 
         return(dlen + (s - src));        /* count does not include NUL */
+}
+// needed to include this function to free memory from ft_split()
+static char	**aryfree(char **ptr, int i)
+{
+	while (i > 0)
+	{
+		i--;
+		free(ptr[i]);
+	}
+	free(ptr);
+	return(0);
 }
 
 int main(void)
@@ -332,17 +343,36 @@ int main(void)
 	printf("Your copy: %s\n", ft_strdup(s));
 	printf("Devl copy: %s\n\n", strdup(s));
 
-	printf("\033[1;33mPART TWO of LIBFT - functions to end all functions\033[0m\n");
+	printf("\033[1;33mPART TWO of LIBFT - functions to end all functions\033[0m\n\n");
+
 	printf("\033[1;31mft_substr()\033[0m\n");
 	char str_sub1[]="this is your sorcestring"; /*25 characters*/
 	printf("Should return 'estri',\nYours: %s\n", ft_substr(str_sub1, 4, 5));
 	printf("Should return NULL,\nYours: %s\n", ft_substr(str_sub1, 4, 50));
-	printf("Should return 'sorcestrin',\nYours: %s\n", ft_substr(str_sub1, 0, 10));
+	printf("Should return 'sorcestrin',\nYours: %s\n\n", ft_substr(str_sub1, 0, 10));
+
+	printf("\033[1;31mft_strjoin()\033[0m\n");
+	char s_j1[]="You do you... ";
+	char s_j2[]="I do me (:p)";
+	printf("String 1: %s\nString 2: %s\n", s_j1, s_j2);
+	printf("Your Join Result: %s\n\n", ft_strjoin(s_j1, s_j2));
 
 	printf("\033[1;31mft_strtrim()\033[0m\n");
 	char strtotrim[] = "i am a fat pigi a m a"; /*15 chars*/
 	char ctoset[] = "i am ";	 /*4 chars*/
 	printf("Original: %s\nYours is: %s\n\n", strtotrim, ft_strtrim(strtotrim, ctoset));
 
+
+	printf("\033[1;31mft_split()\033[0m\n");
+	char splitter[]="___how_many______words_in_this_string?__five_or_six?___";
+ 	char **words;
+    int spliti;
+    words = ft_split(splitter, '_');
+	// while (words[spliti] != NULL)
+	// 	printf("%s\n", words[spliti]);
+	// aryfree(words, spliti);
+    for (spliti = 0; words[spliti] != NULL; spliti++)
+    	printf("%s\n", words[spliti]);
+    aryfree(words, spliti);
 return (0);
 }
