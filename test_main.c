@@ -372,7 +372,11 @@ int main(void)
 	// 	printf("%s\n", words[spliti]);
 	// aryfree(words, spliti);
     for (spliti = 0; words[spliti] != NULL; spliti++)
-    	printf("%s\n", words[spliti]);
+    	printf("%s\n\n", words[spliti]);
     aryfree(words, spliti);
+
+	printf("\033[1;31mft_itoa()\033[0m\n");
+	int itoa_n = -2147483648;
+	printf("Number -2147483648 is: %s\n\n", ft_itoa(itoa_n));
 return (0);
 }
