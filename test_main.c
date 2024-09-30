@@ -7,6 +7,26 @@
 // To compile use: 	gcc test_main.c libft.a -lbsd
 // NOTE: -lbsd must be used to run strlcat
 
+// This function is used to test ft_strmapi()
+static char to_uppercase(unsigned int i, char c)
+	{
+		(void)i;
+		if (c >= 'a' && c <= 'z')
+			return (c - 32);
+		return (c);
+	}
+// This function is used to test  ft_striteri()
+void to_ptuppercase(unsigned int i, char *c)
+	{
+		(void)i;
+		if (*c >= 'a' && *c <= 'z')
+			*c = *c - 32;
+	}
+void	add_index_to_char(unsigned int i, char *c)
+{
+	*c += i;
+}
+
 // This is a separate function used for testing ft_memmove
 void print_result(const char *test_name, const char *expected, const char *result)
 {
@@ -378,5 +398,18 @@ int main(void)
 	printf("\033[1;31mft_itoa()\033[0m\n");
 	int itoa_n = -2147483648;
 	printf("Number -2147483648 is: %s\n\n", ft_itoa(itoa_n));
+
+	printf("\033[1;31mft_strmapi()\033[0m\n");
+	printf("Original: %s\n", splitter);
+	printf("Modified: %s\n\n", ft_strmapi(splitter, to_uppercase));
+
+	printf("\033[1;31mft_striteri()\033[0m\n");
+	printf("Original 1: %s\n", splitter);
+	ft_striteri(splitter, to_ptuppercase);
+	printf("Modified 1: %s\n\n", splitter);
+	printf("Original 2: %s\n", splitter);
+	ft_striteri(splitter, add_index_to_char);
+	printf("Modified 2: %s\n\n", splitter);
+
 return (0);
 }

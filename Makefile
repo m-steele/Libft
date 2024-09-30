@@ -6,7 +6,7 @@
 #    By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 09:57:19 by ekosnick          #+#    #+#              #
-#    Updated: 2024/09/30 13:50:16 by peatjohnsto      ###   ########.fr        #
+#    Updated: 2024/09/30 16:14:45 by peatjohnsto      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS =	ft_bzero.c ft_isalnum.c ft_isalpha.c \
 		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c \
 		ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
 		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
-		ft_itoa.c
+		ft_itoa.c ft_strmapi.c ft_striteri.c
 
 OBJ = $(SRCS:.c=.o)
 NAME = libft.a
