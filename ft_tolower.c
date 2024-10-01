@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 09:55:28 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/25 09:55:30 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:58:49 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Changes uppercase to lower
 #include "libft.h"
 
 int	ft_tolower(int c)

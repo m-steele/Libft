@@ -1,5 +1,7 @@
 
-// trying to condense the code as much as possible :p
+// NOte the below works in place of the while loops
+	// ft_strlcpy(join, s1, len); 
+	// ft_strlcat(join, s2, len);
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -22,7 +24,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	join[j] = '\0';
 	return (join);
 }
-
-// NOte the below works inplace of the while loops
-	// ft_strlcpy(join, s1, len); 
-	// ft_strlcat(join, s2, len);

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <fcntl.h>
 #include <bsd/string.h>
 
 // To compile use: 	gcc test_main.c libft.a -lbsd
@@ -102,7 +103,7 @@ static char	**aryfree(char **ptr, int i)
 
 int main(void)
 {
-	char str = '1';
+	char str = '9';
 	printf("\033[1;31mft_isalnum()\033[0m\n");
 	printf("Your func: %d\n", ft_isalnum(str));
 	printf("Devl func: %d\n\n", isalnum(str));
@@ -270,23 +271,23 @@ int main(void)
 // The string appended will depend on the size. It should
 // append source to wherever size stops, but somehow diff
 // lengths of source may occur ???
-	// printf("\033[1;31mft_strlcat()\033[0m\n");
-	// char dst_string[11] = "Ty jsi -->"; /*11*/
-	// const char *src_string = "velkeho prese"; /*13*/
-	// printf("Destination: %s\n", dst_string);
-	// printf("Source: %s\n", src_string);
-	// size_t size = 9;
-	// size_t ref = ft_strlcat(dst_string, src_string, size);
-	// printf("Your Append: %s\n", dst_string);
-	// printf("Your length: %zu\n\n", ref);
-	// // strcpy(dst_string, "Ty jsi -->");
-	// size_t nref = d_strlcat(dst_string, src_string, size);
-	// printf("Adap Append: %s\n", dst_string);
-	// printf("Adap length: %zu\n\n", nref);
-	// // strcpy(dst_string, "Ty jsi -->");
-	// size_t dref = strlcat(dst_string, src_string, size);
-	// printf("Devl Append: %s\n", dst_string);
-	// printf("Devl length: %zu\n\n", dref);
+	printf("\033[1;31mft_strlcat()\033[0m\n");
+	char dst_string[11] = "Ty jsi -->"; /*11*/
+	const char *src_string = "velkeho prese"; /*13*/
+	printf("Destination: %s\n", dst_string);
+	printf("Source: %s\n", src_string);
+	size_t size = 9;
+	size_t ref = ft_strlcat(dst_string, src_string, size);
+	printf("Your Append: %s\n", dst_string);
+	printf("Your length: %zu\n\n", ref);
+	// strcpy(dst_string, "Ty jsi -->");
+	size_t nref = d_strlcat(dst_string, src_string, size);
+	printf("Adap Append: %s\n", dst_string);
+	printf("Adap length: %zu\n\n", nref);
+	// strcpy(dst_string, "Ty jsi -->");
+	size_t dref = strlcat(dst_string, src_string, size);
+	printf("Devl Append: %s\n", dst_string);
+	printf("Devl length: %zu\n\n", dref);
 
 	printf("\033[1;31mft_strnchr()\033[0m\n");
 	const char big[] = "abcdefgabc";
@@ -302,7 +303,7 @@ int main(void)
 	printf("Devl 'null term': %s\n\n", d_strnstr(big, nothing, 5));
 
 	printf("\033[1;31mft_atio()\033[0m\n");
-	char asciistr[] = "    -153sdfhs";
+	char asciistr[] = "    9153sdfhs";
 	printf("Your return: %d\n", ft_atoi(asciistr));
 	printf("Devl return: %d\n\n", atoi(asciistr));
  
@@ -358,6 +359,16 @@ int main(void)
 		printf("Devl test is'a no good!\n\n");
 	free(ar);
 
+	printf("\033[1;31mft_memcpy()\033[0m\n");
+	char dst2[50];
+	ft_memcpy(dst2, str1, ft_strlen(str1) + 1);
+	printf("Source: %s\n", str1);
+	printf("Destin: %s\n", dst2);
+	if (strcmp(str1, dst2) == 0)
+		printf("Destin matches Source\n");
+	else
+		printf("Destin DOES NOT match Source\n\n");
+
 	printf("\033[1;31mft_strdup()\033[0m\n");
 	char s[] = "-Hello -World!";
 	printf("Your copy: %s\n", ft_strdup(s));
@@ -366,10 +377,11 @@ int main(void)
 	printf("\033[1;33mPART TWO of LIBFT - functions to end all functions\033[0m\n\n");
 
 	printf("\033[1;31mft_substr()\033[0m\n");
-	char str_sub1[]="this is your sorcestring"; /*25 characters*/
-	printf("Should return 'estri',\nYours: %s\n", ft_substr(str_sub1, 4, 5));
-	printf("Should return NULL,\nYours: %s\n", ft_substr(str_sub1, 4, 50));
-	printf("Should return 'sorcestrin',\nYours: %s\n\n", ft_substr(str_sub1, 0, 10));
+	char str_sub1[]="This is your sorcestring"; /*25 characters*/
+	printf("This is your sorcestring\n\n");
+	printf("Should return 'string',\nYours: %s\n\n", ft_substr(str_sub1, 18, 6));
+	printf("Should return NULL,\nYours: %s\n\n", ft_substr(str_sub1, 4, 0));
+	printf("Should return 'This is you',\nYours: %s\n\n", ft_substr(str_sub1, 0, 11));
 
 	printf("\033[1;31mft_strjoin()\033[0m\n");
 	char s_j1[]="You do you... ";
@@ -411,5 +423,53 @@ int main(void)
 	ft_striteri(splitter, add_index_to_char);
 	printf("Modified 2: %s\n\n", splitter);
 
+	printf("\033[1;31mft_putchar_fd()\033[0m\n");
+	ft_putchar_fd('A', 1);
+	write(1, "\n", 1);
+	ft_putchar_fd('B', 2);
+	write(2, "\n\n", 2);
+	int fd_char = open("test_output1.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (fd_char == -1)
+		{
+			write(2, "Failed to open file\n", 20);
+			return (1);
+		}
+	ft_putchar_fd('C', fd_char);
+	close(fd_char);
+	printf("Char has been written to test_output1.txt\n\n");
+
+	printf("\033[1;31mft_putstr_fd()\033[0m\n");
+	int fd_str = open("test_output2.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (fd_str < 0)
+	{
+		printf("Error opening file!\n");
+		return (1);
+	}
+	ft_putstr_fd(str1, fd_str);
+	close(fd_str);
+	printf("String has been written to test_output2.txt\n\n");
+
+	printf("\033[1;31mft_putendl_fd()\033[0m\n");
+	int fd_nl = open("test_output3.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (fd_nl < 0)
+	{
+		printf("Error opening file!\n");
+		return (1);
+	}
+	ft_putendl_fd(str1, fd_nl);
+	close(fd_nl);
+	printf("String has been written to test_output3.txt\n\n");
+
+	
+	printf("\033[1;31mft_putnbr_fd()\033[0m\n");
+	int fd_nbr = open("test_output4.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (fd_nbr < 0)
+	{
+		printf("Error opening file!\n");
+		return (1);
+	}
+	ft_putnbr_fd(1583541, fd_nbr);
+	close(fd_nbr);
+	printf("Int has been written to test_output4.txt\n\n");
 return (0);
 }

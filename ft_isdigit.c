@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/17 12:23:24 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/19 13:24:35 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/01 13:06:18 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// this checks if the 'c' is a number
+// this checks if the 'c' is an int
 #include "libft.h"
 
 int	ft_isdigit(int c)

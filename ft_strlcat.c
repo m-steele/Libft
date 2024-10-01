@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 09:49:33 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/25 11:48:14 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:29:43 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	ret = ft_strlcpy(dst, src, dstsize -1);
 	return (ret + i);
 }
-
-// size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
-// {
-// 	size_t	src_len;
-// 	size_t	dst_len;
-// 	size_t	space_left;
-
-// 	src_len = ft_strlen(src);
-// 	dst_len = ft_strlen(dst);
-// 	space_left = dstsize - dst_len -1;
-// 	if (dst_len >= dstsize)
-// 		return (dstsize + src_len);
-// 	if (space_left > 0)
-// 	{
-// 		size_t cpy_len = (src_len < space_left) ? src_len : space_left;
-// 		ft_memcpy(dst + dst_len, src, cpy_len);
-// 		dst[dst_len + cpy_len] = 0;
-// 	}
-// 	return (dst_len + src_len);
-// }

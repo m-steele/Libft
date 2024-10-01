@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:26:16 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/19 13:26:32 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/01 13:01:05 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,3 @@ void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }
-// #include <stdio.h>
-// int main(void)
-// {
-// 	char d[] = "HUGE!";
-// 	char dd [] = "HUGER!";
-// 	ft_bzero(dd, 2);
-// 	printf("%s\n", dd);
-// 	bzero(d, 2);
-// 	printf("%s\n", d);
-// 	return (0);
-// }

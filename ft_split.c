@@ -6,17 +6,16 @@
 /*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:25:06 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/29 10:55:18 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/10/01 15:23:53 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// use a delimiter character to break a string into chuncks
+// use a delimiter char to break a string into chuncks
 // ft_find_nwords() to create 'n' to store the number of breaks (words) for
 // ft_split(). ft_aryfree() to free memory. MAGIC: ft_write_word()
 // will copy each word recursively... I hope it is permitted
 #include "libft.h"
 
-// Determine number of words 'n'
 static int	ft_find_nwords(char const *s, char c, int n)
 {
 	while (*s)

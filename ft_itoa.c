@@ -1,7 +1,6 @@
 
+// Takes an int and transforms it to ascii
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static char *ft_to_ascii(int n)
 {

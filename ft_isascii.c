@@ -3,13 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:28:28 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/19 13:28:44 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/01 13:06:04 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Checks if the char is ascii
 #include "libft.h"
 
 int	ft_isascii(int c)

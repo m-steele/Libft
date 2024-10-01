@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 13:29:52 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/23 10:23:15 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/01 14:17:14 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		*tmp_dst++ = *tmp_src++;
 	return (dst);
 }
-

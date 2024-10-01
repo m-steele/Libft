@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 10:53:26 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/27 15:03:29 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/01 15:55:41 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Trim the front and back of a string based on set characters
 // use the ft_trim_set() to help identify the set while looping
 // identify the number of chars to remove wth start
+// use substr starting at front half with length of the
+// remaining string end - start
 #include "libft.h"
 
 static int	ft_trim_set(char c, const char *set)
@@ -45,8 +47,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	return (trimmed);
 }
-
-/*
-use substr starting at front half with length of the
-remaining string end - start
-*/
