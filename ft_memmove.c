@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 10:23:06 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/25 09:49:04 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:18:11 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	size_t				i;
 
 	i = 0;
-	if (src == NULL || dst == NULL)
+	if (!src && !dst)
 		return (NULL);
 	tmp_dest = (unsigned char *) dst;
 	tmp_src = (const unsigned char *) src;

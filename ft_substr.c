@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:17:14 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/02 10:17:17 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:30:50 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!s)
 		return (NULL);
 	if (start >= ft_strlen(s))
-		return (NULL);
+		return (ft_strdup(""));
+	if (len > ft_strlen(s + start))
+		len = ft_strlen(s + start);
 	sub_s = (char *)malloc((len + 1) * sizeof(char));
 	if (!sub_s)
 		return (NULL);

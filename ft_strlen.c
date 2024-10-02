@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 10:29:56 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/19 13:23:34 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/02 13:51:05 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
-	if (str == NULL)
-		return (0);
 	i = 0;
 	while (str[i] != '\0')
 		i++;

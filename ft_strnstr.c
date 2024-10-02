@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 13:34:48 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/25 09:54:45 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/02 14:59:23 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	j = 0;
 	if (!*little)
 		return ((char *)big);
-	while (big[i])
+	while (big[i] && i < len)
 	{
 		while (big[i + j] == little[j] && i + j < len)
 			if (!little[++j])
