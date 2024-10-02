@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/02 10:24:39 by ekosnick          #+#    #+#             */
+/*   Updated: 2024/10/02 10:24:42 by ekosnick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 // Modifies the string 's' so no copying or returning
 // But requires a call back function of this form

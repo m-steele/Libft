@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+         #
+#    By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 09:57:19 by ekosnick          #+#    #+#              #
-#    Updated: 2024/10/01 15:35:21 by peatjohnsto      ###   ########.fr        #
+#    Updated: 2024/10/02 09:59:51 by ekosnick         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

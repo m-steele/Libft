@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 11:52:14 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/09/25 12:20:51 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/02 10:13:55 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 {
 	char	*new;
 	char	*start;
-	
+
 	new = (char *)malloc(ft_strlen(s) + 1);
 	if (!new)
 		return (NULL);

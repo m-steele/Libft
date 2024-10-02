@@ -1,37 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/02 10:04:07 by ekosnick          #+#    #+#             */
+/*   Updated: 2024/10/02 10:06:31 by ekosnick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 // Takes an int and transforms it to ascii
 #include "libft.h"
 
-static char *ft_to_ascii(int n)
+static char	*ft_to_ascii(int n)
 {
-    char    *str;
-    int     nums;
-    int     temp;
+	char	*str;
+	int		nums;
+	int		temp;
 
 	nums = 0;
-    temp = n;
-    while (temp != 0)
-    {
-        nums++;
-        temp /= 10;
-    }
-    str = (char *)malloc((nums + 1) * sizeof(char));
+	temp = n;
+	while (temp != 0)
+	{
+		nums++;
+		temp /= 10;
+	}
+	str = (char *)malloc((nums + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-    str[nums--] = '\0';
-    while (n > 0)
-    {
-        str[nums--] = (n % 10) + '0';
-        n /= 10;
-    }
-    return (str);
+	str[nums--] = '\0';
+	while (n > 0)
+	{
+		str[nums--] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (str);
 }
 
-static char*	ft_neg_ascii(int n)
+static char	*ft_neg_ascii(int n)
 {
-	char 	*str;
-	char 	*neg;
-	
+	char	*str;
+	char	*neg;
+
 	if (n < 0)
 		n = n * -1;
 	neg = ft_to_ascii(n);
@@ -46,10 +57,10 @@ static char*	ft_neg_ascii(int n)
 	str[0] = '-';
 	str = ft_strjoin(str, neg);
 	free (neg);
-		return (str);
+	return (str);
 }
 
-static char *ft_zero_ascii(int n)
+static char	*ft_zero_ascii(int n)
 {
 	char	*str;
 
@@ -57,7 +68,7 @@ static char *ft_zero_ascii(int n)
 	{
 		str = (char *)malloc((12) * sizeof(char));
 		str = "-2147483648";
-			return (str);
+		return (str);
 	}
 	else
 		str = (char *)malloc(2);
@@ -65,7 +76,7 @@ static char *ft_zero_ascii(int n)
 		return (NULL);
 	str[0] = '0';
 	str[1] = '\0';
-		return (str);
+	return (str);
 }
 
 char	*ft_itoa(int n)
@@ -84,6 +95,6 @@ char	*ft_itoa(int n)
 		str = ft_neg_ascii(n);
 		return (str);
 	}
-		else
-			return (NULL);
+	else
+		return (NULL);
 }

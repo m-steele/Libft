@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/02 10:17:14 by ekosnick          #+#    #+#             */
+/*   Updated: 2024/10/02 10:17:17 by ekosnick         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 // returns a user defined len substring
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char 	*sub_s;
+	char	*sub_s;
 	size_t	i;
 
 	if (!s)
-		return(NULL);
+		return (NULL);
 	if (start >= ft_strlen(s))
-		return(NULL);
+		return (NULL);
 	sub_s = (char *)malloc((len + 1) * sizeof(char));
 	if (!sub_s)
 		return (NULL);
@@ -20,6 +31,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		sub_s[i] = s[start + i];
 		i++;
 	}
-	sub_s[i]= '\0';
+	sub_s[i] = '\0';
 	return (sub_s);
 }

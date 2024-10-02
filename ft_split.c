@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:25:06 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/01 15:23:53 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/10/02 10:23:48 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,15 @@ static char	**aryfree(char **ptr, int i)
 		free(ptr[i]);
 	}
 	free(ptr);
-	return(0);
+	return (0);
 }
 
 // Copy each word, recursively
-static char **ft_write_words(char **words, char const *s, char c, int i)
+static char	**ft_write_words(char **words, char const *s, char c, int i)
 {
 	char	*catch;
-	int 	len;
-	
+	int		len;
+
 	len = 0;
 	while (*s == c)
 		s++;
