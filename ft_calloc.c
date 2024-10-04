@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 09:46:11 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/02 10:29:08 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/03 18:33:45 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,14 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void	*point;
-
-	if (!nmemb || !size)
+	unsigned char	*pnt;
+	size_t			i;
+	
+	i = 0;
+	pnt = (void *)malloc(nmemb * size);
+	if (!pnt)
 		return (NULL);
-	if (nmemb * size / size != nmemb)
-		return (NULL);
-	point = (void *)malloc(nmemb * size);
-	if (!point)
-		return (NULL);
-	ft_bzero(point, nmemb);
-	return (point);
+	while (i < nmemb * size)
+		pnt[i++] = 0;
+	return (pnt);
 }

@@ -3,15 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 10:04:07 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/02 10:06:31 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/03 18:24:47 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Takes an int and transforms it to ascii
 #include "libft.h"
+
+void	ft_strcpy(char *dst, const char *src)
+{
+	int	i;
+
+	i = 0;
+	while (src[i])
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+}
 
 static char	*ft_to_ascii(int n)
 {
@@ -40,38 +53,36 @@ static char	*ft_to_ascii(int n)
 
 static char	*ft_neg_ascii(int n)
 {
-	char	*str;
+	char	*z;
 	char	*neg;
+	char	*s;
 
-	if (n < 0)
-		n = n * -1;
-	neg = ft_to_ascii(n);
+	n = n * -1;
+	s = "-";
+	z = ft_to_ascii(n);
+	if (!z)
+		return (NULL);
+	neg = ft_strjoin(s, z);
+	free(z);
 	if (!neg)
 		return (NULL);
-	str = (char *)malloc(ft_strlen(neg) + 2);
-	if (!str)
-	{
-		free(neg);
-		return (str);
-	}
-	str[0] = '-';
-	str = ft_strjoin(str, neg);
-	free (neg);
-	return (str);
+	return (neg);
 }
 
-static char	*ft_zero_ascii(int n)
+static char	*ft_edge(int n)
 {
 	char	*str;
 
-	if (n == -2147483648)
+	if (n == INT_MIN)
 	{
 		str = (char *)malloc((12) * sizeof(char));
-		str = "-2147483648";
+		if (!str)
+			return (NULL);
+		ft_strcpy(str, "-2147483648");
 		return (str);
 	}
 	else
-		str = (char *)malloc(2);
+		str = (char *)malloc((2) * sizeof(char));
 	if (!str)
 		return (NULL);
 	str[0] = '0';
@@ -84,7 +95,7 @@ char	*ft_itoa(int n)
 	char	*str;
 
 	if (n == 0 || n == -2147483648)
-		return (ft_zero_ascii(n));
+		return (ft_edge(n));
 	else if (n > 0)
 	{
 		str = ft_to_ascii(n);
