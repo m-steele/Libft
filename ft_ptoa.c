@@ -22,6 +22,7 @@ char *ft_ptoa(unsigned long pt)
 
 	base = "0123456789abcdef";
 	p = pt;
+	len = 1;
 	while (p /= 16)
 		len++;
 	str = (char *)malloc((len + 1) * sizeof(char));
