@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 10:24:09 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/03 18:22:31 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/10/04 14:52:36 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-		if (*s == (char)c)
-			return ((char *)s);
+	if (*s == (char)c)
+		return ((char *)s);
 	return (NULL);
 }
