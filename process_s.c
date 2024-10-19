@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   process_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 09:58:42 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/10/17 16:47:18 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/10/19 11:26:28 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 unsigned int	process_s(va_list args)
 {

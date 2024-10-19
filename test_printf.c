@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "ft_printf.h"
-/* gcc test_printf.c libftprintf.a */
+#include "libft.h"
+/* gcc test_printf.c libft.a */
 /* valgrind --leak-check=full ./a.out */
 
 int main()

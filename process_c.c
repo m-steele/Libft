@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   process_c.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:00:48 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/10/17 16:54:00 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/10/19 11:36:37 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 unsigned int	process_c(va_list args, char spec)
 {
@@ -18,8 +18,6 @@ unsigned int	process_c(va_list args, char spec)
 
 	if (spec == 'c')
 		c = va_arg(args, int);
-	else
-		c = '%';
 	write(1, &c, 1);
 	return (1);
 }

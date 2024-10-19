@@ -6,11 +6,11 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:06:46 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/18 10:10:54 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/19 11:25:09 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 char	*ft_itolowhex(unsigned long num)
 {

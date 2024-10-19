@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   process_u.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:12:43 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/17 16:47:24 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/10/19 11:25:55 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 char	*ft_utoa(unsigned int u)
 {

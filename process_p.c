@@ -6,11 +6,11 @@
 /*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 10:17:53 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/18 12:23:06 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/10/19 11:31:53 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 char	*ft_ptoa(unsigned long pt)
 {
