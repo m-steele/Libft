@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ptoa.c                                          :+:      :+:    :+:   */
+/*   process_p.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/14 10:52:21 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/10/14 11:15:09 by peatjohnsto      ###   ########.fr       */
+/*   Created: 2024/10/15 10:17:53 by ekosnick          #+#    #+#             */
+/*   Updated: 2024/10/18 12:23:06 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-// used to convert a pointer to ascii; Note that 0x needs
-// to be added to the begining
-char *ft_ptoa(unsigned long pt)
+#include "ft_printf.h"
+
+char	*ft_ptoa(unsigned long pt)
 {
 	char			*str;
 	char			*base;
@@ -21,10 +20,15 @@ char *ft_ptoa(unsigned long pt)
 	int				len;
 
 	base = "0123456789abcdef";
+	if (pt == 0)
+		return (ft_strdup("0"));
 	p = pt;
-	len = 1;
-	while (p /= 16)
+	len = 0;
+	while (p)
+	{
+		p /= 16;
 		len++;
+	}
 	str = (char *)malloc((len + 1) * sizeof(char));
 	if (!str)
 		return (0);
@@ -35,4 +39,31 @@ char *ft_ptoa(unsigned long pt)
 		pt /= 16;
 	}
 	return (str);
+}
+
+int	process_p(va_list args)
+{
+	int		n;
+	void	*p;
+	char	*p_s;
+	char	*s;
+
+	n = 0;
+	p = va_arg(args, void *);
+	if (p == NULL)
+		return (write(1, "(nil)", 5));
+	p_s = ft_ptoa((unsigned long)p);
+	if (!p_s)
+		p_s = "(null)";
+	s = p_s;
+	write(1, "0x", 2);
+	n += 2;
+	while (*s)
+	{
+		write(1, s, 1);
+		s++;
+		n++;
+	}
+	free(p_s);
+	return (n);
 }

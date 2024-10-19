@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   process_id.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 10:24:09 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/04 14:52:36 by ekosnick         ###   ########.fr       */
+/*   Created: 2024/10/16 09:56:08 by peatjohnsto       #+#    #+#             */
+/*   Updated: 2024/10/17 16:54:04 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// return string from first occur of defined char or null
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+unsigned int	process_id(va_list args)
 {
+	int			n;
+	int			i;
+	char		*i_s;
+	char		*s;
+
+	n = 0;
+	i = va_arg(args, int);
+	i_s = ft_itoa(i);
+	if (!i_s)
+		i_s = "(NULL)";
+	s = i_s;
 	while (*s)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
+		write(1, s, 1);
 		s++;
+		n++;
 	}
-	if (*s == (char)c)
-		return ((char *)s);
-	return (NULL);
+	free(i_s);
+	return (n);
 }
-
