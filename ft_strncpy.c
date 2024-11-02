@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_stncpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 09:46:11 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/11/02 11:26:13 by peatjohnsto      ###   ########.fr       */
+/*   Created: 2024/11/02 11:17:35 by peatjohnsto       #+#    #+#             */
+/*   Updated: 2024/11/02 11:36:40 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// sets all the allocated bytes to 0
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	unsigned char	*pnt;
-	size_t			i;
+	size_t	i;
 
 	i = 0;
-	if (nmemb && (nmemb * size) / nmemb != size)
-		return (NULL);
-	pnt = (void *)malloc(nmemb * size);
-	if (!pnt)
-		return (NULL);
-	while (i < nmemb * size)
-		pnt[i++] = 0;
-	return (pnt);
+	while (i < n && src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
