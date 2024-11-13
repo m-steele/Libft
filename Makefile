@@ -6,7 +6,7 @@
 #    By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 09:57:19 by ekosnick          #+#    #+#              #
-#    Updated: 2024/11/11 11:47:50 by peatjohnsto      ###   ########.fr        #
+#    Updated: 2024/11/13 13:25:35 by peatjohnsto      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS =	ft_bzero.c ft_isalnum.c ft_isalpha.c \
 		process_xx.c process_x.c process_u.c process_s.c \
 		process_p.c process_id.c process_c.c ft_printf.c \
 		ft_strncpy.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-		ft_lstlast.c
+		ft_lstlast.c ft_lstadd_back.c
 		
 
 OBJ = $(SRCS:.c=.o)
