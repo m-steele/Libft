@@ -6,7 +6,7 @@
 #    By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/25 09:57:19 by ekosnick          #+#    #+#              #
-#    Updated: 2024/11/13 13:25:35 by peatjohnsto      ###   ########.fr        #
+#    Updated: 2024/11/25 10:27:28 by peatjohnsto      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,15 @@ SRCS =	ft_bzero.c ft_isalnum.c ft_isalpha.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
 		process_xx.c process_x.c process_u.c process_s.c \
 		process_p.c process_id.c process_c.c ft_printf.c \
-		ft_strncpy.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
-		ft_lstlast.c ft_lstadd_back.c
-		
+		ft_strncpy.c 
 
 OBJ = $(SRCS:.c=.o)
+
+BONUS =	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
+		ft_lstiter.c ft_lstmap.c
+
+BONUS_OBJ = $(BONUS:.c=.o)
 NAME = libft.a
 
 #converts .c files --> .o files in libft.h directory: (-o $@ -->id .o names) ($< --> first rerequisite .c names)
@@ -45,12 +49,15 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ) program a.out
+	$(RM) $(OBJ) $(BONUS_OBJ) program a.out
 
 fclean: clean
 	$(RM) $(NAME)
 
 re:	fclean all
+
+bonus: $(OBJ) $(BONUS_OBJ)
+	ar rcs 	$(NAME) $(OBJ) $(BONUS_OBJ)
 
 #Do not confuse files with these rules
 .PHONY: re all clean fclean

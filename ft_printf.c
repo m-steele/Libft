@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 15:41:17 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/19 11:34:06 by ekosnick         ###   ########.fr       */
+/*   Created: 2024/11/25 09:30:34 by peatjohnsto       #+#    #+#             */
+/*   Updated: 2024/11/25 09:30:52 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

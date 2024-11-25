@@ -6,13 +6,13 @@
 /*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:46:00 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/11/11 11:04:24 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/11/25 09:32:21 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
 

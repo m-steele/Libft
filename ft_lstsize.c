@@ -6,16 +6,16 @@
 /*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:34:46 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/11/11 11:43:06 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/11/25 09:28:14 by peatjohnsto      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	lst_len;
-	
+
 	lst_len = 0;
 	while (lst)
 	{
