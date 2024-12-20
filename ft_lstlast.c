@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:43:43 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/11/25 09:27:46 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/12/20 12:29:49 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
+	while (lst->nt)
+		lst = lst->nt;
 	return (lst);
 }

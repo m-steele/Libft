@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: peatjohnston <peatjohnston@student.42.f    +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 11:34:46 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/11/25 09:28:14 by peatjohnsto      ###   ########.fr       */
+/*   Updated: 2024/12/20 12:30:38 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_lstsize(t_list *lst)
 	while (lst)
 	{
 		lst_len++;
-		lst = lst->next;
+		lst = lst->nt;
 	}
 	return (lst_len);
 }

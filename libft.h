@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:49:28 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/12/20 12:22:22 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/12/20 12:26:32 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@
 
 typedef struct s_list
 {
-	void			*c;
-	struct s_list	*n;
+	void			*ct; // content
+	struct s_list	*nt; // next
 }	t_list;
 
 void			ft_bzero(void *s, size_t n);
