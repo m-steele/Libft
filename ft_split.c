@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 12:25:06 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/10/04 14:54:37 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/12/27 13:02:29 by ekosnick         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 // use a delimiter char to break a string into chuncks
 // ft__n_ofwords() to create 'n' to store the number of breaks (words) for
@@ -41,7 +41,7 @@ static char	**aryfree(char **pnt, int i)
 		free(pnt[i]);
 	}
 	free(pnt);
-	return (0);
+	return (NULL);
 }
 
 static char	*ft_wwrite(char *word, char const *s, int i, int w_len)
@@ -84,13 +84,16 @@ static char	**ft_w_splt(char **s_pnt, const char *s, char delim, int nw)
 		wlen = 0;
 		word++;
 	}
-	s_pnt[word] = 0;
+	s_pnt[word] = NULL;
 	return (s_pnt);
 }
 
+// added the words parameter so that we can protect against a NULL return
+// this solved one of the problems.
 char	**ft_split(char const *s, char c)
 {
 	char	**ary4ary;
+	char	**words;
 	int		n_ofwords;
 
 	if (!s)
@@ -99,7 +102,10 @@ char	**ft_split(char const *s, char c)
 	ary4ary = (char **)malloc((n_ofwords + 1) * sizeof(char *));
 	if (!ary4ary)
 		return (NULL);
-	return (ft_w_splt(ary4ary, s, c, n_ofwords));
+	words = ft_w_splt(ary4ary, s, c, n_ofwords);
+	if (!words)
+		return (NULL);
+	return (words);
 }
 
 // Copy eac word, recursively

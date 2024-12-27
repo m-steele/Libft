@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/25 08:50:34 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/12/22 10:16:10 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/12/22 10:38:17 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (!lst || !del)
-		return ;
 	while (*lst)
 	{
 		temp = (*lst)->nt;
@@ -26,3 +24,18 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	}
 	*lst = NULL;
 }
+
+// void	ft_lstclear(t_list **lst, void (*del)(void *))
+// {
+// 	t_list	*temp;
+
+// 	if (!lst || !del)
+// 		return ;
+// 	while (*lst)
+// 	{
+// 		temp = (*lst)->nt;
+// 		ft_lstdelone(*lst, del);
+// 		*lst = temp;
+// 	}
+// 	*lst = NULL;
+// }
