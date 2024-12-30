@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:46:00 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/12/27 13:05:49 by ekosnick         ###   ########.fr       */
+/*   Updated: 2024/12/30 10:02:32 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -23,7 +23,8 @@
 // 	new_node->nt = NULL;
 // 	return (new_node);
 // }
-
+// WE MADE AN ADJUSTMENT TO PROTECH AGAINST NEW_NODE IF IT
+// DID NOT TRANSFER THE CONTENTS OF CT TO NEW_NODE->CT
 t_list	*ft_lstnew(void *ct)
 {
 	t_list	*new_node;
