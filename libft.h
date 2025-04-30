@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:49:28 by ekosnick          #+#    #+#             */
-/*   Updated: 2024/12/20 12:26:32 by ekosnick         ###   ########.fr       */
+/*   Updated: 2025/04/30 09:46:32 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,14 @@
 
 typedef struct s_list
 {
-	void			*ct; // content
-	struct s_list	*nt; // next
-}	t_list;
+	void			*ct;
+	int				pos;
+	int				index;
+	int				target;
+	int				costfora;
+	int				costforb;
+	struct	s_list	*nt;
+} t_list;
 
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
