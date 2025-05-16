@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:49:28 by ekosnick          #+#    #+#             */
-/*   Updated: 2025/05/14 14:28:24 by ekosnick         ###   ########.fr       */
+/*   Updated: 2025/05/16 10:16:28 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <stdarg.h>
-
-// typedef struct s_list
-// {
-// 	void			*ct; // content
-// 	struct s_list	*nt; // next
-// }	t_list;
 
 typedef struct s_list
 {
