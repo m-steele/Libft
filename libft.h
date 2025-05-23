@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:49:28 by ekosnick          #+#    #+#             */
-/*   Updated: 2025/05/16 10:16:28 by ekosnick         ###   ########.fr       */
+/*   Updated: 2025/05/23 11:40:15 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ typedef struct s_list
 	int				target;
 	int				costfora;
 	int				costforb;
-	struct	s_list	*nt;
-} t_list;
+	struct s_list	*nt;
+}	t_list;
 
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
@@ -87,7 +87,8 @@ void			ft_lstadd_back(t_list **lst, t_list *new);
 void			ft_lstdelone(t_list *lst, void (*del)(void *));
 void			ft_lstclear(t_list **lst, void (*del)(void *));
 void			ft_lstiter(t_list *lst, void (*f)(void *));
-t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 int				ft_abs(int n);
 char			*get_next_line(int fd);
 

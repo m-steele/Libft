@@ -1,30 +1,17 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
+/*   By: ekosnick <ekosnick@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 10:46:00 by peatjohnsto       #+#    #+#             */
-/*   Updated: 2024/12/30 10:02:32 by ekosnick         ###   ########.fr       */
+/*   Created: 2025/05/23 11:38:23 by ekosnick          #+#    #+#             */
+/*   Updated: 2025/05/23 11:38:24 by ekosnick         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libft.h"
 
-// t_list	*ft_lstnew(void *ct)
-// {
-// 	t_list	*new_node;
-
-// 	new_node = malloc(sizeof(t_list));
-// 	if (!new_node)
-// 		return (NULL);
-// 	new_node->ct = ct ? ft_strdup(ct) : NULL;
-// 	new_node->nt = NULL;
-// 	return (new_node);
-// }
-// WE MADE AN ADJUSTMENT TO PROTECH AGAINST NEW_NODE IF IT
-// DID NOT TRANSFER THE CONTENTS OF CT TO NEW_NODE->CT
 t_list	*ft_lstnew(void *ct)
 {
 	t_list	*new_node;
