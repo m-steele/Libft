@@ -6,7 +6,7 @@
 /*   By: ekosnick <ekosnick@student.42.f>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 12:49:28 by ekosnick          #+#    #+#             */
-/*   Updated: 2025/06/27 08:58:57 by ekosnick         ###   ########.fr       */
+/*   Updated: 2025/06/27 10:00:47 by ekosnick         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <stdarg.h>
+# include <fcntl.h>
+# include <sys/stat.h>
 
 typedef struct s_list
 {
@@ -92,5 +94,6 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 int				ft_abs(int n);
 char			*get_next_line(int fd);
 void			ft_free_split(char **split);
+int				openfd(char *fd, int in_out);
 
 #endif // LIBFT_H
